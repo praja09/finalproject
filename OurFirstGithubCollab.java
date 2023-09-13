@@ -6,5 +6,6 @@ public class OurFirstGithubCollab{
             System.out.println("Tambahan dari anggota 1");
             System.out.println("Aku mau makan");
             System.out.println("Terserah");
+            System.out.println("Inshallah");
         }
 }

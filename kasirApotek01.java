@@ -50,10 +50,9 @@ public class kasirApotek01 {
             System.out.println("\nMenu Kasir Apotek :");
             System.out.println("1.Inventaris");
             System.out.println("2.Transaksi");
-            System.out.println("3.Cetak Struk");
-            System.out.println("4.Laporan Penjualan");
-            System.out.println("5.Selesai");
-            System.out.print("\nPilih menu (1/2/3/4/5): ");
+            System.out.println("3.Laporan Penjualan");
+            System.out.println("4.Selesai");
+            System.out.print("\nPilih menu (1/2/3/4): ");
             int menu = sc.nextInt();
            
 
@@ -228,11 +227,10 @@ public class kasirApotek01 {
                             "                             Daftar Obat dalam Keranjang                               ");
                     System.out.println(
                             "=======================================================================================");
-                    System.out.printf("%-4s%-30s%30s%20s%n", "ID", "Nama Obat", "Kode Obat", "Sisa Kuantitas");
+                    System.out.printf("%-4s%-30s%30s%n", "ID", "Nama Obat", "Kode Obat");
 
                     for (int i = 0; i < indexKeranjang; i++) {
-                        System.out.printf("%-4d%-30s%25s%18s%n", i + 1, keranjang[i], daftarObat[i][1],
-                                daftarObat[i][2]);
+                        System.out.printf("%-4d%-30s%25s%n", i + 1, keranjang[i], daftarObat[i][1]);
                     }
                     System.out.println(
                             "---------------------------------------------------------------------------------------");
@@ -272,11 +270,10 @@ public class kasirApotek01 {
                     System.out.println("Tanggal         :                              17 November 2023");
                     System.out.println(  "Kasir           :                              " + loginUser);
                     System.out.println("------------------------------------------------------------");
-                    System.out.printf("%-4s%-30s%-12s%-12s%n", "ID", "Nama Obat", "Kode Obat", "Sisa Kuantitas");
+                    System.out.printf("%-4s%-30s%-12s%n", "ID", "Nama Obat", "Kode Obat");
                     System.out.println("------------------------------------------------------------");
                     for (int i = 0; i < indexKeranjang; i++) {
-                        System.out.printf("%-4d%-30s%4s%15s%n", i + 1, keranjang[i], daftarObat[i][1],
-                                daftarObat[i][2]);
+                        System.out.printf("%-4d%-30s%4s%15s%n", i + 1, keranjang[i], daftarObat[i][1]);
                     }
                     System.out.println("------------------------------------------------------------");
                     System.out.println("Sub total       :                                 " + "Rp " + totalHarga);
@@ -312,8 +309,6 @@ public class kasirApotek01 {
                     break;
 
                 case 4:
-
-                case 5:
                     System.out.println("=--------------------------------------------=");
                     System.out.println("Terima kasih telah berbelanja di apotek kami!");
                     System.exit(0);

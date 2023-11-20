@@ -76,7 +76,7 @@ public class sistemKasir18 {
             if (totalHarga >= 50000 && totalHarga < 150000) {
                 totalHarga -= 5000;
             } else if (totalHarga >= 150000) {
-                totalHarga -= 10000;
+                totalHarga-=10000;
             }
         }
 

@@ -4,6 +4,9 @@ public class sistemKasir18 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
+        String[] keranjang = new String[100];
+        int indexKeranjang = 0;
+
         String namaObat ;
         int kuantitas ;
         double hargaObat, subtotal, uangDibayarkan, kembalian, totalHarga = 0;
@@ -23,6 +26,9 @@ public class sistemKasir18 {
             subtotal = kuantitas * hargaObat;
             totalHarga = totalHarga + subtotal;
 
+            keranjang[indexKeranjang] = namaObat;
+            indexKeranjang++;
+
             System.out.println("Subtotal harga obat "+ namaObat + ":"+ subtotal);
 
             System.out.println("====================================");
@@ -34,6 +40,27 @@ public class sistemKasir18 {
             if (lanjut.equalsIgnoreCase("tidak")) {
                 selesai = true;
             }
+        }
+
+        System.out.println("Daftar Obat dalam Keranjang:");
+        for(int i = 0; i < indexKeranjang; i++){
+            System.out.println((i+1) + ". " + keranjang[i]);
+        }        
+        
+        System.out.println("Apakah Anda ingin mencari item di keranjang? (ya/tidak): ");
+        String searchChoice = input.nextLine();
+        if(searchChoice.equalsIgnoreCase("ya")){
+            System.out.print("Masukkan nama obat yang ingin Anda cari: ");
+            String cariObat = input.nextLine();
+            int indexing = 0;
+
+            for (int i=0; i < keranjang.length; i++) {
+                if (cariObat==keranjang[i]) {
+                    indexing=i;
+                    break;
+                }
+            }
+            System.out.println("Obat "+cariObat+" Terdapat di Index "+indexing);
         }
 
         System.out.print("Apakah Anda memiliki kartu member? (ya/tidak): ");
@@ -52,6 +79,8 @@ public class sistemKasir18 {
                 totalHarga-=10000;
             }
         }
+
+        // ... Bagian kode yang tersisa tetap tidak berubah ...
 
         System.out.println("Total Harga (termasuk potongan diskon): " + totalHarga);
 

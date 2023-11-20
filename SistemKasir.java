@@ -10,24 +10,32 @@ public class SistemKasir {
     System.out.println("*********************************");
     System.out.println("");
 
-    String namaObat, kartuMember, pembayaran;
-    int jumlahObat;
-    double harga, totalHarga, kembalian, uangBayar;
-
+    String kartuMember, pembayaran,tambahan;
+    String namaObat [] = new String [10];
+    int jumlahObat [] = new int [10];
+    double harga [] = new double [10];
+    double totalHarga, kembalian, uangBayar; 
+    int i = 0;
+    
     //nama obat, jumlah obat dan harga
-    System.out.print("masukkan nama obat : ");
-    namaObat = sc.nextLine();
-    System.out.print("masukkan kuantitas yang dibeli : ");
-    jumlahObat = sc.nextInt();
-    System.out.print("masukkan harga : ");
-    harga = sc.nextDouble();
-    sc.nextLine();
-
-    totalHarga = jumlahObat*harga;
+    do {
+        
+        System.out.print("masukkan nama obat : ");
+        namaObat [i] sc.next();
+        System.out.print("masukkan kuantitas yang dibeli : ");
+        jumlahObat[i]= sc.nextInt();
+        System.out.print("masukkan harga : ");
+        harga [i] = sc.nextDouble();
+        System.out.print("apakah ada tambahan? (y/n) : ");
+        tambahan = sc.next();
+    
+    } while (tambahan.equalsIgnoreCase("y"));
+    
+    totalHarga  = jumlahObat[i] * harga[i];
     
     System.out.println();
     System.out.println("apakah mempunyai kartu member?");
-    kartuMember = sc.nextLine();
+    kartuMember = sc.next();
     System.out.println();
 
     if (kartuMember.equals("punya")) {
@@ -54,7 +62,7 @@ public class SistemKasir {
 
     System.out.println("");
     System.out.print("pembayaran melalui tunai / non tunai ? : ");
-    pembayaran = sc.nextLine();
+    pembayaran = sc.next();
 
     if (pembayaran.equals("tunai")) {
         System.out.print("masukkan jumlah uang yang dibayarkan : ");
@@ -65,11 +73,10 @@ public class SistemKasir {
 
     } else {
        System.out.print("menggunakan pembayaran apa? : ");
-       pembayaran = sc.nextLine();
+       pembayaran = sc.next();
 
        System.out.println("pembayaran lunas");
-            
-        }
+    }
     
     System.out.println("");
     System.out.println("**********************************");

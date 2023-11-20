@@ -14,9 +14,9 @@ public class MultiUser {
         System.out.println("*********************************");
 
         do {
-            System.out.print("masukkan nama pengguna : ");
+            System.out.print("masukkan nama pengguna    : ");
             nama = sc.nextLine();
-            System.out.print("masukkan password : ");
+            System.out.print("masukkan password         : ");
             kataSandi = sc.nextLine();
 
             login = false;

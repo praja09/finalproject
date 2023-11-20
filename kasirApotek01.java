@@ -42,7 +42,7 @@ public class kasirApotek01 {
                 System.out.println("Username atau password salah, Silahkan coba lagi");
             }
         }
-        System.out.println("Selamat Datang " + loginUser + "!");
+        System.out.println("\nSelamat Datang " + loginUser + "!");
 
         boolean member = false;
 
@@ -53,8 +53,9 @@ public class kasirApotek01 {
             System.out.println("3.Cetak Struk");
             System.out.println("4.Laporan Penjualan");
             System.out.println("5.Selesai");
-            System.out.print("Pilih menu (1/2/3/4/5): ");
+            System.out.print("\nPilih menu (1/2/3/4/5): ");
             int menu = sc.nextInt();
+           
 
             switch (menu) {
                 case 1:
@@ -68,9 +69,9 @@ public class kasirApotek01 {
                         System.out.printf("%-4d%-30s%-12s%-12s%-15s%n", i + 1, daftarObat[i][0], daftarObat[i][1],
                                 daftarObat[i][2], daftarObat[i][3]);
                     }
-                    System.out.println("==========================================");
+                    // System.out.println("==========================================");
                     while (true) {
-                        System.out.print("Masukkan kode obat: ");
+                        System.out.print("\nMasukkan kode obat: ");
                         sc.nextLine(); // Membuang karakter newline
                         String kode = sc.nextLine();
                         int index = -1;
@@ -114,7 +115,7 @@ public class kasirApotek01 {
                                 sc.nextLine();
                                 System.out.println("---------------------------------------------------");
 
-                                System.out.println("             Tambah barang baru               ");
+                                System.out.println("                Tambah barang baru               ");
                                 System.out.println("---------------------------------------------------");
 
                                 System.out.print("Input barang baru : ");
@@ -238,7 +239,7 @@ public class kasirApotek01 {
                     System.out.println("");
 
                     sc.nextLine(); // Membuang karakter newline
-                    System.out.print("Apakah Anda punya member (ya/tidak)? ");
+                    System.out.print("Apakah Anda punya kartu member (ya/tidak)? ");
                     String response = sc.nextLine();
 
                     if (response.equalsIgnoreCase("ya")) {
@@ -267,9 +268,9 @@ public class kasirApotek01 {
                     System.out.println("\n============================================================");
                     System.out.println("                 STRUK PEMBAYARAN - INVOICE");
                     System.out.println("============================================================");
-                    System.out.println("No. Transaksi   :                                 #INV123456789");
+                    System.out.println("No. Transaksi   :                              #INV123456789");
                     System.out.println("Tanggal         :                              17 November 2023");
-                    System.out.println("Kasir            :                               " + loginUser);
+                    System.out.println(  "Kasir           :                              " + loginUser);
                     System.out.println("------------------------------------------------------------");
                     System.out.printf("%-4s%-30s%-12s%-12s%n", "ID", "Nama Obat", "Kode Obat", "Sisa Kuantitas");
                     System.out.println("------------------------------------------------------------");
@@ -278,8 +279,8 @@ public class kasirApotek01 {
                                 daftarObat[i][2]);
                     }
                     System.out.println("------------------------------------------------------------");
-                    System.out.println("Sub total       :                                 " + totalHarga);
-                    System.out.println("Diskon          :                                 " + diskon);
+                    System.out.println("Sub total       :                                 " + "Rp " + totalHarga);
+                    System.out.println("Diskon          :                                 " + "Rp " + diskon);
                     System.out.println("------------------------------------------------------------");
                     System.out.println("Total           :                                 " + "Rp " + finalHarga);
                     System.out.println("Tunai           :                                 " + "Rp " + uangPelanggan);

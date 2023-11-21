@@ -21,7 +21,7 @@ public class SistemKasir {
     do {
         
         System.out.print("masukkan nama obat : ");
-        namaObat [i] sc.next();
+        namaObat [i] = sc.next();
         System.out.print("masukkan kuantitas yang dibeli : ");
         jumlahObat[i]= sc.nextInt();
         System.out.print("masukkan harga : ");

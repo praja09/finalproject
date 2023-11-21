@@ -18,7 +18,7 @@ public class kasirApotek01 {
                 { "Kalsium laktat tablet", "J", "100", "7000" }
         };
 
-        String[] username = { "afgan1", "user2", "user3", "user4" };
+        String[] username = { "afgan", "praja", "fasya", "maisya" };
         String[] password = { "pass1", "pass2", "pass3", "pass4" };
 
         boolean loginBerhasil = false;
@@ -42,6 +42,8 @@ public class kasirApotek01 {
                 System.out.println("Username atau password salah, Silahkan coba lagi");
             }
         }
+
+        System.out.println();
         System.out.println("Selamat Datang " + loginUser + "!");
 
         boolean member = false;
@@ -58,7 +60,75 @@ public class kasirApotek01 {
 
             switch (menu) {
                 case 1:
-                    boolean kembaliKeMenuUtama = false;
+                    boolean kembaliKeMenuUtama;
+                    boolean inventoryMenu = false;
+                    do {
+                        System.out.println("\nPilih menu inventory : ");
+                        System.out.println("1.Tambah Barang baru");
+                        System.out.println("2.Update Stok");
+                        System.out.println("3.Kembali");
+                        System.out.print("Pilih Menu Inventory (1/2/3) : ");
+                        String menuInventory;
+                        menuInventory = sc.next();
+
+                        kembaliKeMenuUtama = false;
+
+                        switch (menuInventory) {
+                            case "1":
+                                sc.nextLine();
+                                System.out.println("---------------------------------------------------");
+
+                                System.out.println("             Tambah barang baru               ");
+                                System.out.println("---------------------------------------------------");
+
+                                System.out.print("Input barang baru : ");
+                                String barangBaru = sc.nextLine();
+
+                                System.out.print("Kode obat         : ");
+                                String obatBaru = sc.nextLine();
+
+                                System.out.print("Harga             : ");
+                                String hargaBaru = sc.nextLine();
+
+                                System.out.print("Stok              : ");
+                                String stokBaru = sc.nextLine();
+
+                                break;
+                            case "2":
+                                System.out.println("\nUpdate Stok : ");
+                                System.out.printf("%-4s%-30s%-12s%-12s%-15s%n", "ID", "Nama Obat", "Kode Obat",
+                                        "Kuantitas",
+                                        "Harga per Unit");
+
+                                for (int i = 0; i < daftarObat.length; i++) {
+                                    System.out.printf("%-4d%-30s%-12s%-12s%-15s%n", i + 1, daftarObat[i][0],
+                                            daftarObat[i][1],
+                                            daftarObat[i][2], daftarObat[i][3]);
+                                }
+
+                                System.out.print("Masukkan kode obat untuk cek stok : ");
+                                sc.nextLine();
+                                String kodeObatCek = sc.nextLine();
+
+                                int indexObatCek = -1;
+                                for (int i = 0; i < daftarObat.length; i++) {
+                                    if (daftarObat[i][1].equalsIgnoreCase(kodeObatCek)) {
+                                        indexObatCek = i;
+                                        break;
+                                    }
+                                }
+
+                                break;
+                            case "3":
+                                kembaliKeMenuUtama = true;
+                                break;
+
+                            default:
+                                System.out.println("Menu tidak valid, Silahkan Pilih 1, 2, atau 3.");
+                                break;
+
+                        }
+                    } while (!kembaliKeMenuUtama);
 
                     System.out.println("\nDaftar Obat : ");
                     System.out.printf("%-4s%-30s%-12s%-12s%-15s%n", "ID", "Nama Obat", "Kode Obat", "Kuantitas",
@@ -99,74 +169,73 @@ public class kasirApotek01 {
 
                     }
 
-                    boolean inventoryMenu = false;
-                    do {
-                        System.out.println("\nPilih menu inventory : ");
-                        System.out.println("1.Tambah Barang baru");
-                        System.out.println("2.Update Stok");
-                        System.out.println("3.Kembali");
-                        System.out.print("Pilih Menu Inventory (1/2/3) : ");
-                        String menuInventory;
-                        menuInventory = sc.next();
+                    // boolean inventoryMenu = false;
+                    // do {
+                    // System.out.println("\nPilih menu inventory : ");
+                    // System.out.println("1.Tambah Barang baru");
+                    // System.out.println("2.Update Stok");
+                    // System.out.println("3.Kembali");
+                    // System.out.print("Pilih Menu Inventory (1/2/3) : ");
+                    // String menuInventory;
+                    // menuInventory = sc.next();
 
-                        switch (menuInventory) {
-                            case "1":
-                                sc.nextLine();
-                                System.out.println("---------------------------------------------------");
+                    // switch (menuInventory) {
+                    // case "1":
+                    // sc.nextLine();
+                    // System.out.println("---------------------------------------------------");
 
-                                System.out.println("             Tambah barang baru               ");
-                                System.out.println("---------------------------------------------------");
+                    // System.out.println(" Tambah barang baru ");
+                    // System.out.println("---------------------------------------------------");
 
-                                System.out.print("Input barang baru : ");
-                                String barangBaru = sc.nextLine();
+                    // System.out.print("Input barang baru : ");
+                    // String barangBaru = sc.nextLine();
 
-                                System.out.print("Kode obat         : ");
-                                String obatBaru = sc.nextLine();
+                    // System.out.print("Kode obat : ");
+                    // String obatBaru = sc.nextLine();
 
-                                System.out.print("Harga             : ");
-                                String hargaBaru = sc.nextLine();
+                    // System.out.print("Harga : ");
+                    // String hargaBaru = sc.nextLine();
 
-                                System.out.print("Stok              : ");
-                                String stokBaru = sc.nextLine();
+                    // System.out.print("Stok : ");
+                    // String stokBaru = sc.nextLine();
 
-                                break;
-                            case "2":
-                                System.out.println("\nUpdate Stok : ");
-                                System.out.printf("%-4s%-30s%-12s%-12s%-15s%n", "ID", "Nama Obat", "Kode Obat",
-                                        "Kuantitas",
-                                        "Harga per Unit");
+                    // break;
+                    // case "2":
+                    // System.out.println("\nUpdate Stok : ");
+                    // System.out.printf("%-4s%-30s%-12s%-12s%-15s%n", "ID", "Nama Obat", "Kode
+                    // Obat",
+                    // "Kuantitas",
+                    // "Harga per Unit");
 
-                                for (int i = 0; i < daftarObat.length; i++) {
-                                    System.out.printf("%-4d%-30s%-12s%-12s%-15s%n", i + 1, daftarObat[i][0],
-                                            daftarObat[i][1],
-                                            daftarObat[i][2], daftarObat[i][3]);
-                                }
+                    // for (int i = 0; i < daftarObat.length; i++) {
+                    // System.out.printf("%-4d%-30s%-12s%-12s%-15s%n", i + 1, daftarObat[i][0],
+                    // daftarObat[i][1],
+                    // daftarObat[i][2], daftarObat[i][3]);
+                    // }
 
-                                System.out.print("Masukkan kode obat untuk cek stok : ");
-                                sc.nextLine();
-                                String kodeObatCek = sc.nextLine();
+                    // System.out.print("Masukkan kode obat untuk cek stok : ");
+                    // sc.nextLine();
+                    // String kodeObatCek = sc.nextLine();
 
+                    // int indexObatCek = -1;
+                    // for (int i = 0; i < daftarObat.length; i++) {
+                    // if (daftarObat[i][1].equalsIgnoreCase(kodeObatCek)) {
+                    // indexObatCek = i;
+                    // break;
+                    // }
+                    // }
 
+                    // break;
+                    // case "3":
+                    // kembaliKeMenuUtama = true;
+                    // break;
 
-                                int indexObatCek = -1;
-                                for (int i = 0; i < daftarObat.length; i++) {
-                                    if (daftarObat[i][1].equalsIgnoreCase(kodeObatCek)) {
-                                        indexObatCek = i;
-                                        break;
-                                    }
-                                }
+                    // default:
+                    // System.out.println("Menu tidak valid, Silahkan Pilih 1, 2, atau 3.");
+                    // break;
 
-                                break;
-                            case "3":
-                                kembaliKeMenuUtama = true;
-                                break;
-
-                            default:
-                                System.out.println("Menu tidak valid, Silahkan Pilih 1, 2, atau 3.");
-                                break;
-
-                        }
-                    } while (!kembaliKeMenuUtama);
+                    // }
+                    // } while (!kembaliKeMenuUtama);
 
                     break;
                 case 2:
@@ -227,7 +296,7 @@ public class kasirApotek01 {
                             "                             Daftar Obat dalam Keranjang                               ");
                     System.out.println(
                             "=======================================================================================");
-                    System.out.printf("%-4s%-30s%30s%20s%n", "ID", "Nama Obat", "Kode Obat", "Sisa Kuantitas");
+                    System.out.printf("%-4s%-30s%30s%20s%n", "ID", "Nama Obat", "Kode Obat", "Kuantitas");
 
                     for (int i = 0; i < indexKeranjang; i++) {
                         System.out.printf("%-4d%-30s%25s%18s%n", i + 1, keranjang[i], daftarObat[i][1],
@@ -271,7 +340,7 @@ public class kasirApotek01 {
                     System.out.println("Tanggal         :                              17 November 2023");
                     System.out.println("Kasir            :                               " + loginUser);
                     System.out.println("------------------------------------------------------------");
-                    System.out.printf("%-4s%-30s%-12s%-12s%n", "ID", "Nama Obat", "Kode Obat", "Sisa Kuantitas");
+                    System.out.printf("%-4s%-30s%-12s%-12s%n", "ID", "Nama Obat", "Kode Obat", "Harga ");
                     System.out.println("------------------------------------------------------------");
                     for (int i = 0; i < indexKeranjang; i++) {
                         System.out.printf("%-4d%-30s%4s%15s%n", i + 1, keranjang[i], daftarObat[i][1],
@@ -311,6 +380,7 @@ public class kasirApotek01 {
                     break;
 
                 case 4:
+                    System.out.println("DATA LAPORAN PENJUALAN ");
 
                 case 5:
                     System.out.println("=--------------------------------------------=");
@@ -322,6 +392,7 @@ public class kasirApotek01 {
                     System.out.println("Menu tidak valid. Silakan pilih menu 1, 2, 3, atau 4.");
                     break;
             }
+
         }
     }
 }

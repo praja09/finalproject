@@ -162,7 +162,7 @@ public class perubahan {
                     System.out.println("\n--------------Transaksi-----------------");
                     while (true) {
                         System.out.print("\nMasukkan kode obat yang ingin dibeli: ");
-                        // sc.nextLine(); // Membuang karakter newline
+                        sc.nextLine(); // Membuang karakter newline
                         String x = sc.nextLine();
 
                         int idx = -1;
@@ -189,7 +189,7 @@ public class perubahan {
                                 indexKeranjang++;
                             } else {
                                 System.out.println("---- Stok tidak mencukupi.");
-                            }
+                            }    
                         } else {
                             System.out.println("Kode obat tidak valid.");
                         }

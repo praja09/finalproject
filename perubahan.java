@@ -55,7 +55,7 @@ public class perubahan {
             System.out.println("4.Selesai");
             System.out.print("Pilih menu (1/2/3/4): ");
             int menu = sc.nextInt();
-            sc.nextLine();
+            // sc.nextLine();
 
             switch (menu) {
                 case 1:
@@ -114,7 +114,7 @@ public class perubahan {
                                 }
                                 break;
                             case "2":
-                                sc.nextLine();
+                                // sc.nextLine();
                                 System.out.println("----------------------------------------------------");
                                 System.out.println("                   Update Stok                      ");
                                 System.out.println("----------------------------------------------------");
@@ -162,7 +162,7 @@ public class perubahan {
                     System.out.println("\n--------------Transaksi-----------------");
                     while (true) {
                         System.out.print("\nMasukkan kode obat yang ingin dibeli: ");
-                        // sc.nextLine(); // Membuang karakter newline
+                        sc.nextLine(); // harus tetap ada jangan di comment
                         String x = sc.nextLine();
 
                         int idx = -1;

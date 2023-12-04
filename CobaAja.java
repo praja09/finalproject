@@ -81,6 +81,9 @@ public class CobaAja {
                 System.out.println("Kembalian : Rp " + kembalian);
                 System.out.println("Terimakasih Telah belanja!");
 
+                System.out.println("apakah sudah makan?");
+                sc.nextLine();
+
                 break;
             }
         }

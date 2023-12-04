@@ -197,7 +197,7 @@ public class perubahan {
                         System.out.print("Apakah Anda ingin membeli obat lagi (ya/tidak)? ");
                         sc.nextLine();
                         String lanjut = sc.nextLine();
-                        // sc.nextLine();
+                        
 
                         if (lanjut.equalsIgnoreCase("tidak")) {
                             break;

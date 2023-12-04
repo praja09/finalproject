@@ -17,6 +17,7 @@ public class perubahan {
                 { "Ibu profen tablet", "I", "90", "3000" },
                 { "Kalsium laktat tablet", "J", "100", "7000" }
         };
+        //SEHARUSNYA UDAH BISA INI 4 DESEMBER
 
         String[] username = { "afgan1", "user2", "user3", "user4" };
         String[] password = { "pass1", "pass2", "pass3", "pass4" };
@@ -55,7 +56,7 @@ public class perubahan {
             System.out.println("4.Selesai");
             System.out.print("Pilih menu (1/2/3/4): ");
             int menu = sc.nextInt();
-            // sc.nextLine();
+            sc.nextLine();
 
             switch (menu) {
                 case 1:
@@ -68,6 +69,7 @@ public class perubahan {
                         System.out.println("3.Kembali");
                         System.out.print("Pilih Menu (1/2/3) : ");
                         String menuInventory = sc.nextLine();
+                      
 
                         switch (menuInventory) {
                             case "1":
@@ -142,7 +144,7 @@ public class perubahan {
                                 break;
 
                             default:
-                                System.out.println("Menu inventory tidak valid!");
+                                System.out.println("\nMenu inventory tidak valid!");
                                 break;
                         }
 
@@ -162,7 +164,7 @@ public class perubahan {
                     System.out.println("\n--------------Transaksi-----------------");
                     while (true) {
                         System.out.print("\nMasukkan kode obat yang ingin dibeli: ");
-                        sc.nextLine(); // harus tetap ada jangan di comment
+                        // sc.nextLine(); // harus tetap ada jangan di comment
                         String x = sc.nextLine();
 
                         int idx = -1;
@@ -178,6 +180,7 @@ public class perubahan {
                             System.out.println("Harga Obat\t\t: " + daftarObat[idx][3]);
                             System.out.print("Kuantitas\t\t: ");
                             qty = sc.nextInt();
+                            sc.nextLine();
 
                             if (qty <= Integer.parseInt(daftarObat[idx][2])) {
                                 int subtotal = Integer.parseInt(daftarObat[idx][3]) * qty;
@@ -194,8 +197,8 @@ public class perubahan {
                             System.out.println("Kode obat tidak valid.");
                         }
 
-                        System.out.print("Apakah Anda ingin membeli obat lagi (ya/tidak)? ");
-                        sc.nextLine();
+                        System.out.print("\nApakah Anda ingin membeli obat lagi (ya/tidak)? ");
+                        // sc.nextLine();
                         String lanjut = sc.nextLine();
                         
 

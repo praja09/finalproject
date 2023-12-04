@@ -55,7 +55,7 @@ public class perubahan {
             System.out.println("4.Selesai");
             System.out.print("Pilih menu (1/2/3/4): ");
             int menu = sc.nextInt();
-            sc.nextLine();
+            // sc.nextLine();
 
             switch (menu) {
                 case 1:
@@ -67,7 +67,7 @@ public class perubahan {
                         System.out.println("2.Update Stok");
                         System.out.println("3.Kembali");
                         System.out.print("Pilih Menu (1/2/3) : ");
-                        String menuInventory = sc.next();
+                        String menuInventory = sc.nextLine();
 
                         switch (menuInventory) {
                             case "1":
@@ -85,8 +85,8 @@ public class perubahan {
                                 // System.out.println("==========================================");
                                 while (true) {
                                     System.out.print("\nMasukkan kode obat: ");
-                                    sc.nextLine(); // Membuang karakter newline
                                     String kode = sc.nextLine();
+                                    // kode = sc.nextLine(); // Membuang karakter newline
                                     int index = -1;
                                     for (int i = 0; i < daftarObat.length; i++) {
                                         if (daftarObat[i][1].equalsIgnoreCase(kode)) {
@@ -114,12 +114,12 @@ public class perubahan {
                                 }
                                 break;
                             case "2":
-                                sc.nextLine();
+                                // sc.nextLine();
                                 System.out.println("----------------------------------------------------");
                                 System.out.println("                   Update Stok                      ");
                                 System.out.println("----------------------------------------------------");
 
-                                System.out.print("Masukkan kode obat      : ");
+                                System.out.print("  Masukkan kode obat      : ");
                                 String key = sc.nextLine();
                                 for (int i = 0; i < daftarObat.length; i++) {
                                     for (int j = 0; j < daftarObat[i].length; j++) {
@@ -162,7 +162,7 @@ public class perubahan {
                     System.out.println("\n--------------Transaksi-----------------");
                     while (true) {
                         System.out.print("\nMasukkan kode obat yang ingin dibeli: ");
-                        sc.nextLine(); // Membuang karakter newline
+                        sc.nextLine(); // harus tetap ada jangan di comment
                         String x = sc.nextLine();
 
                         int idx = -1;
@@ -195,7 +195,8 @@ public class perubahan {
                         }
 
                         System.out.print("Apakah Anda ingin membeli obat lagi (ya/tidak)? ");
-                        String lanjut = sc.next();
+                        sc.nextLine();
+                        String lanjut = sc.nextLine();
                         // sc.nextLine();
 
                         if (lanjut.equalsIgnoreCase("tidak")) {
@@ -220,7 +221,7 @@ public class perubahan {
                             "---------------------------------------------------------------------------------------");
                     System.out.println("");
 
-                    sc.nextLine(); // Membuang karakter newline
+                    // sc.nextLine(); // INI HARUSNYA GA DISINI GAUSAH
                     System.out.print("Apakah Anda punya member (ya/tidak)? ");
                     String response = sc.nextLine();
 

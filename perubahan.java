@@ -17,6 +17,7 @@ public class perubahan {
                 { "Ibu profen tablet", "I", "90", "3000" },
                 { "Kalsium laktat tablet", "J", "100", "7000" }
         };
+        //SEHARUSNYA UDAH BISA INI 4 DESEMBER
 
         String[] username = { "afgan1", "user2", "user3", "user4" };
         String[] password = { "pass1", "pass2", "pass3", "pass4" };

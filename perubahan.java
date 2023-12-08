@@ -194,7 +194,7 @@ public class perubahan {
                                 indexKeranjang++;
                             } else {
                                 System.out.println("---- Stok tidak mencukupi.");
-                            }
+                            }    
                         } else {
                             System.out.println("Kode obat tidak valid.");
                         }

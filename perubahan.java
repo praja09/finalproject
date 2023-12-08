@@ -99,9 +99,7 @@ public class perubahan {
 
                                     if (index != -1) {
                                         System.out.println("Nama Obat\t: " + daftarObat[index][0]);
-                                        System.out.p
-                                        
-                                       System.out.println("Kuantitas\t: " + daftarObat[index][2]);
+                                        System.out.println("Kuantitas\t: " + daftarObat[index][2]);
                                         System.out.println("Harga Obat\t: " + daftarObat[index][3]);
                                     } else {
                                         System.out.println("Kode obat tidak ditemukan.");

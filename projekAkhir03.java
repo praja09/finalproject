@@ -11,21 +11,20 @@ public class projekAkhir03 {
         int[] kuantitas = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 10 };
         int[] harga = { 12000, 15000, 12500, 26500, 11500, 29000, 11000, 9500, 3000, 7000 };
 
-        String[] username = new String [10];
-        username [0] = ("afgan1");
-        username [1] = ("dipa10");
-        username [2]= ("fasya12");
-        username [3]= ("maisya18");
+        String[] username = new String[10];
+        username[0] = ("afgan1");
+        username[1] = ("dipa10");
+        username[2] = ("fasya12");
+        username[3] = ("maisya18");
 
-        String[] password = new String [10];
-        password [0] = ("pass1");
-        password [1] = ("pass2");
-        password [2] = ("pass3");
-        password [3] = ("pass4");
+        String[] password = new String[10];
+        password[0] = ("pass1");
+        password[1] = ("pass2");
+        password[2] = ("pass3");
+        password[3] = ("pass4");
 
         String[][] dataPenjualan = new String[100][100];
         int jumlahTransaksi = 0;
-
 
         boolean loginBerhasil = false;
         String loginUser = "";
@@ -160,6 +159,7 @@ public class projekAkhir03 {
                     int totalHarga = 0;
                     int diskon = 0;
                     String[] keranjang = new String[100];
+                    int[] qtyArray = new int[100];
                     int indexKeranjang = 0;
                     int qty = 0;
 
@@ -189,12 +189,14 @@ public class projekAkhir03 {
                             sc.nextLine();
 
                             if (qty <= kuantitas[idx]) {
+
                                 int subtotal = harga[idx] * qty;
                                 System.out.println("Subtotal\t\t: " + subtotal);
 
-                                kuantitas[idx] = (qty);
+                                kuantitas[idx] -= (qty);
                                 totalHarga += subtotal;
                                 keranjang[indexKeranjang] = obat[idx];
+                                qtyArray[indexKeranjang] = qty;
                                 indexKeranjang++;
 
                             } else {
@@ -224,7 +226,7 @@ public class projekAkhir03 {
                     System.out.printf("%-4s%-30s%30s%20s%n", "ID", "Nama Obat", "Kode Obat", "Kuantitas");
 
                     for (int i = 0; i < indexKeranjang; i++) {
-                        System.out.printf("%-4d%-30s%25s%18s%n", i + 1, keranjang[i], kode[i], qty);
+                        System.out.printf("%-4d%-30s%25s%18s%n", i + 1, keranjang[i], kode[i], qtyArray[i]);
 
                     }
                     System.out.println(
@@ -269,7 +271,7 @@ public class projekAkhir03 {
 
                     for (int i = 0; i < indexKeranjang; i++) {
                         System.out.printf("%-4d%-30s%15s%n", i + 1, keranjang[i],
-                                qty);
+                                qtyArray[i]);
                     }
 
                     System.out.println("------------------------------------------------------------");
@@ -298,8 +300,8 @@ public class projekAkhir03 {
                     // Simpan informasi barang yang dibeli
                     for (int i = 0; i < indexKeranjang; i++) {
                         dataPenjualan[jumlahTransaksi][2 + i * 3] = keranjang[i];
-                        dataPenjualan[jumlahTransaksi][3 + i * 3] = Integer.toString(qty);
-                        dataPenjualan[jumlahTransaksi][4 + i * 3] = Integer.toString(harga[i] * qty);
+                        dataPenjualan[jumlahTransaksi][3 + i * 3] = Integer.toString(qtyArray[i]);
+                        dataPenjualan[jumlahTransaksi][4 + i * 3] = Integer.toString(harga[i] * qtyArray[i]);
                     }
 
                     dataPenjualan[jumlahTransaksi][6] = Integer.toString(finalHarga);
@@ -310,11 +312,11 @@ public class projekAkhir03 {
                 case 3:
                     System.out.println("\nLaporan Penjualan");
                     for (int i = 0; i < jumlahTransaksi; i++) {
-                                System.out.println("-----------------------------------------");
-                                System.out.println("Nomor Transaksi     : #" + (i + 1));
-                                System.out.println("Tanggal             : " + dataPenjualan[i][0]);
-                                System.out.println("Kasir               : " + dataPenjualan[i][1]);
-                                System.out.println("-----------------------------------------");
+                        System.out.println("-----------------------------------------");
+                        System.out.println("Nomor Transaksi     : #" + (i + 1));
+                        System.out.println("Tanggal             : " + dataPenjualan[i][0]);
+                        System.out.println("Kasir               : " + dataPenjualan[i][1]);
+                        System.out.println("-----------------------------------------");
 
                         // Menampilkan barang yang dibeli
                         for (int j = 2; j < dataPenjualan[i].length - 1; j += 3) {
@@ -325,36 +327,80 @@ public class projekAkhir03 {
                             }
                         }
 
-                                System.out.println("Total Pendapatan    : " + dataPenjualan[i][6]);
+                        System.out.println("\nTotal Pendapatan    : " + dataPenjualan[i][6]);
                     }
                     break;
                 case 4:
                     int pengguna = 4;
-                    System.out.println("tambahkan akun");
+                    boolean kembaliKeMenuAkun = false;
 
-                    for (int i = 0; i < username.length; i++) {
-                        System.out.print("masukkan nama : ");
-                        username[pengguna] = sc.nextLine();
-                        System.out.print("masukkan password : ");
-                        password[pengguna] = sc.nextLine();
-                        System.out.println("akun sudah ditambahkan");
+                    while (!kembaliKeMenuAkun) {
+                        System.out.println("\nMenu Akun");
+                        System.out.println("1.Buat Akun");
+                        System.out.println("2.Daftar Akun");
+                        System.out.println("3.Kembali");
+                        System.out.print("Pilih Menu (1/2/3): ");
+                        String pilihMenuAkun = sc.nextLine();
 
-                        break;
+                        switch (pilihMenuAkun) {
+                            case "1":
+                                // Tambahkan akun baruz
+                                System.out.print("\nMasukkan nama: ");
+                                username[pengguna] = sc.nextLine();
+                                System.out.print("Masukkan password: ");
+                                password[pengguna] = sc.nextLine();
+                                pengguna++;
+                                System.out.println("Akun berhasil ditambahkan!");
+                                break;
+                            case "2":
+                                // Tampilkan daftar akun
+                                System.out.println("\n=========================================================");
+                                System.out
+                                        .println("                       DAFTAR AKUN                                ");
+                                System.out.println("=========================================================");
+                                System.out.printf("\n%-4s%-30s%20s%n", "ID", "Username", "Password");
+
+                                for (int i = 0; i < username.length; i++) {
+                                    if (username[i] != null && password[i] != null) {
+                                        System.out.printf("%-4d%-30s%20s%n", i + 1, username[i], password[i]);
+                                    }
+                                }
+                                System.out.println("---------------------------------------------------------");
+                                break;
+                            case "3":
+                                // Kembali ke menu utama
+                                kembaliKeMenuAkun = true;
+                                break;
+                            default:
+                                System.out.println("Menu tidak valid. Silakan pilih menu 1, 2, atau 3.");
+                                break;
+                        }
                     }
+                    break;
 
-                case 5: 
+                // for (int i = 0; i < username.length; i++) {
+                // System.out.print("masukkan nama : ");
+                // username[pengguna] = sc.nextLine();
+                // System.out.print("masukkan password : ");
+                // password[pengguna] = sc.nextLine();
+                // System.out.println("akun sudah ditambahkan");
+                // break;
+                // }
+
+                case 5:
+                    
                     System.out.println("=--------------------------------------------=");
                     System.out.println("Terima kasih telah berbelanja di apotek kami!");
                     System.exit(0);
                     break;
 
                 default:
-                    System.out.println("Menu tidak valid. Silakan pilih menu 1, 2, 3, atau 4.");
+                    System.out.println("Menu tidak valid!. Silakan pilih menu 1, 2, 3, 4, atau 5.");
                     break;
 
             }
 
         }
-        
-    }   
+
+    }
 }

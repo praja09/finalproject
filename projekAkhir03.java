@@ -58,9 +58,9 @@ public class projekAkhir03 {
             System.out.println("1.Inventaris");
             System.out.println("2.Transaksi");
             System.out.println("3.Laporan Penjualan");
-            System.out.println("4.Selesai");
-            System.out.println("5.Buat Akun");
-            System.out.print("Pilih menu (1/2/3/4?5): ");
+            System.out.println("4.Buat Akun");
+            System.out.println("5.Selesai");
+            System.out.print("Pilih menu (1/2/3/4/5): ");
             int menu = sc.nextInt();
             sc.nextLine();
 
@@ -329,12 +329,6 @@ public class projekAkhir03 {
                     }
                     break;
                 case 4:
-                    System.out.println("=--------------------------------------------=");
-                    System.out.println("Terima kasih telah berbelanja di apotek kami!");
-                    System.exit(0);
-                    break;
-
-                case 5: 
                     int pengguna = 4;
                     System.out.println("tambahkan akun");
 
@@ -344,8 +338,14 @@ public class projekAkhir03 {
                         System.out.print("masukkan password : ");
                         password[pengguna] = sc.nextLine();
                         System.out.println("akun sudah ditambahkan");
+
                         break;
                     }
+
+                case 5: 
+                    System.out.println("=--------------------------------------------=");
+                    System.out.println("Terima kasih telah berbelanja di apotek kami!");
+                    System.exit(0);
                     break;
 
                 default:

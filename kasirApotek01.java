@@ -358,7 +358,7 @@ public class kasirApotek01 {
 
                     System.out.println("------------------------------------------------------------");
                     for (int i = 0; i < indexKeranjang; i++) {
-                        System.out.printf("%-4d%-30s%4s%15s%n", i + 1, keranjang[i], daftarObat[i][1]);
+                        System.out.printf("%-4s%-30s%-12s%n", i + 1, keranjang[i], daftarObat[i][1]);
                     }
                     System.out.println("------------------------------------------------------------");
                     System.out.println("Sub total       :                                 " + "Rp " + totalHarga);

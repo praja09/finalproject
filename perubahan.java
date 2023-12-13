@@ -19,7 +19,7 @@ public class perubahan {
         };
         //SEHARUSNYA UDAH BISA INI 4 DESEMBER
 
-        String[] username = { "afgan1", "user2", "user3", "user4" };
+        String[] username = { "afgan1", "user2", "fasya12", "user4" };
         String[] password = { "pass1", "pass2", "pass3", "pass4" };
 
         boolean loginBerhasil = false;
@@ -28,9 +28,9 @@ public class perubahan {
         while (!loginBerhasil) {
             System.out.print("\nMasukkan username : ");
             String user = sc.nextLine();
-
-            System.out.print("Masukkan Password : ");
+            System.out.print("masukkan pasword");
             String pw = sc.nextLine();
+
 
             for (int i = 0; i < username.length; i++) {
                 if (user.equals(username[i]) && pw.equals(password[i])) {
@@ -43,7 +43,7 @@ public class perubahan {
                 System.out.println("Username atau password salah, Silahkan coba lagi");
             }
         }
-        System.out.println("Selamat Datang " + loginUser + "!");
+        System.out.println("\nSelamat Datang " + loginUser + "!");
 
         boolean member = false;
 
@@ -54,7 +54,8 @@ public class perubahan {
             System.out.println("2.Transaksi");
             System.out.println("3.Laporan Penjualan");
             System.out.println("4.Selesai");
-            System.out.print("Pilih menu (1/2/3/4): ");
+            System.out.println("5.Tambahkan Anggota");
+            System.out.print("Pilih menu (1/2/3/4/5): ");
             int menu = sc.nextInt();
             sc.nextLine();
 
@@ -121,7 +122,7 @@ public class perubahan {
                                 System.out.println("                   Update Stok                      ");
                                 System.out.println("----------------------------------------------------");
 
-                                System.out.print("  Masukkan kode obat      : ");
+                                System.out.print("Masukkan kode obat      : ");
                                 String key = sc.nextLine();
                                 for (int i = 0; i < daftarObat.length; i++) {
                                     for (int j = 0; j < daftarObat[i].length; j++) {
@@ -256,7 +257,7 @@ public class perubahan {
                     System.out.println("============================================================");
                     System.out.println("No. Transaksi   :                                 #INV123456789");
                     System.out.println("Tanggal         :                              17 November 2023");
-                    System.out.println("Kasir            :                               " + loginUser);
+                    // System.out.println("Kasir            :                               " + loginUser);
                     System.out.println("------------------------------------------------------------");
                     System.out.printf("%-4s%-30s%-12s%-12s%n", "ID", "Nama Obat", "Kode Obat", "Sisa Kuantitas");
                     System.out.println("------------------------------------------------------------");

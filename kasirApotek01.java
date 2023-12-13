@@ -307,11 +307,11 @@ public class kasirApotek01 {
 
                     System.out.printf("%-4s%-30s%30s%20s%n", "ID", "Nama Obat", "Kode Obat", "Kuantitas");
 
-                    System.out.printf("%-4s%-30s%30s%n", "ID", "Nama Obat", "Kode Obat");
+                    // System.out.printf("%-4s%-30s%30s%n", "ID", "Nama Obat", "Kode Obat");
 
 
                     for (int i = 0; i < indexKeranjang; i++) {
-                        System.out.printf("%-4d%-30s%25s%n", i + 1, keranjang[i], daftarObat[i][1]);
+                        System.out.printf("%-4d%-30s%25s%n", i + 1, keranjang[i], daftarObat[i][1], daftarObat[i][2] );
                     }
                     System.out.println(
                             "---------------------------------------------------------------------------------------");

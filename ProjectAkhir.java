@@ -1,16 +1,57 @@
 import java.util.Scanner;
-public class projekAkhir12 {
+public class ProjectAkhir {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         // data barang
-        String[] kode = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
-        String[] obat = { "Alprazolam Tablet", "Benzatin benzil penisilin", "Clobazam tablet", "Deksametason",
-                "Entromisin kaplet", "Flukonazol tablet", "Glimepiride tablet", "Hidrokortison krim",
-                "Ibu profen tablet", "Kalsium laktat tablet" };
-        int[] kuantitas = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 10 };
-        int[] harga = { 12000, 15000, 12500, 26500, 11500, 29000, 11000, 9500, 3000, 7000 };
+        String [] kode = new String [20];
+        kode [0] = ("A");
+        kode [1] = ("B");
+        kode [2] = ("C");
+        kode [3] = ("D");
+        kode [4] = ("E");
+        kode [5] = ("F");
+        kode [6] = ("G");
+        kode [7] = ("H");
+        kode [8] = ("I");
+        kode [9] = ("J");
+        
+        String[] obat = new String [20];
+        obat [0] = ("Alprazolam Tablet");
+        obat [1] = ("Benzatin benzil penisilin");
+        obat [2] = ("Clobazam tablet");
+        obat [3] = ("Deksametason");
+        obat [4] = ("Entromisin kaplet");
+        obat [5] = ("Flukonazol tablet");
+        obat [6] = ("Glimepiride tablet");
+        obat [7] = ("Hidrokortison krim");
+        obat [8] = ("Ibu profen tablet");
+        obat [9] = ("Kalsium laktat tablet"); 
+       
+        int[] kuantitas = new int [20];
+        kuantitas [0] = (10);
+        kuantitas [1] = (20);
+        kuantitas [2] = (30);
+        kuantitas [3] = (40);
+        kuantitas [4] = (50);
+        kuantitas [5] = (60);
+        kuantitas [6] = (70);
+        kuantitas [7] = (80);
+        kuantitas [8] = (90);
+        kuantitas [9] = (10);
+        
+        int[] harga =new int [20]; 
+        harga [0] = (12000);
+        harga [1] = (15000);
+        harga [2] = (12500);
+        harga [3] = (26500);
+        harga [4] = (11500);
+        harga [5] = (29000);
+        harga [6] = (11000);
+        harga [7] = (9500);
+        harga [8] = (3000);
+        harga [9] = (7000);
 
         // akun 
         String[] username = new String[10];
@@ -78,8 +119,9 @@ public class projekAkhir12 {
                         System.out.println("\nMenu Inventory");
                         System.out.println("1.Inventory");
                         System.out.println("2.Update Stok");
-                        System.out.println("3.Kembali");
-                        System.out.print("Pilih Menu (1/2/3) : ");
+                        System.out.println("3.Tambah Barang");
+                        System.out.println("4. Kembali");
+                        System.out.print("Pilih Menu (1/2/3/4) : ");
                         String menuInventory = sc.nextLine();
 
                         switch (menuInventory) {
@@ -147,8 +189,32 @@ public class projekAkhir12 {
 
                                 }
                                 break;
+                            
+                            case "3" :
+                                int code = 10;
 
-                            case "3":
+                                for (int i = 0; i < dataPenjualan.length; i++) {
+                                    
+                                System.out.println("------------------------------------------------");
+                                System.out.println("               Tambah Obat Baru                 ");
+                                System.out.println("------------------------------------------------\n");
+
+                                System.out.print("Masukkan Kode Obat : ");
+                                kode [code] = sc.nextLine();
+                                System.out.print("Masukkan Nama Obat : ");
+                                obat [code] = sc.nextLine();
+                                System.out.println("Masukkan Stok Obat");
+                                kuantitas [code] = sc.nextInt();
+                                System.out.print("Masukkan Harga Obat : ");
+                                harga [code] = sc.nextInt();
+                                sc.nextLine();
+                                code++;
+                                System.out.println("obat baru berhasil ditambahkan");
+                                break;
+                                }
+                                break;
+                            
+                            case "4":
                                 backToMenu = true;
                                 break;
 
@@ -426,4 +492,6 @@ public class projekAkhir12 {
 
     }
 }
+
+
 

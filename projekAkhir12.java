@@ -166,7 +166,7 @@ public class projekAkhir12 {
                 
                 case 2:
                 
-                System.out.println("update diskon");
+                System.out.print("update diskon: ");
                 upDiskon = sc.nextDouble();
                 sc.nextLine();
 
@@ -283,15 +283,15 @@ public class projekAkhir12 {
                     System.out.println("\n============================================================");
                     System.out.println("                 STRUK PEMBAYARAN - INVOICE");
                     System.out.println("============================================================");
-                    System.out.println("No. Transaksi   :                                 #INV123456789");
-                    System.out.println("Tanggal         :                              " + tanggal);
-                    System.out.println("Kasir            :                               " + loginUser);
+                    System.out.println("No. Transaksi   :                                #INV123456789");
+                    System.out.println("Tanggal         :                                " + tanggal);
+                    System.out.println("Kasir           :                                " + loginUser);
                     System.out.println("------------------------------------------------------------");
-                    System.out.printf("%-4s%-30s%-12s%n", "ID", "Nama Obat", "Kuantitas");
+                    System.out.printf("%-4s%-30s%-30s%n", "ID", "Nama Obat", "               Kuantitas");
                     System.out.println("------------------------------------------------------------");
 
                     for (int i = 0; i < indexKeranjang; i++) {
-                        System.out.printf("%-4d%-30s%15s%n", i + 1, keranjang[i],
+                        System.out.printf("%-4d%-30s%17s%n", i + 1, keranjang[i],
                                 qtyArray[i]);
                     }
 
